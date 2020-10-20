@@ -32,6 +32,7 @@
     <script>
       // leaflet map config
       const mymap = L.map('issMap').setView([0, 0], 1);
+      const marker = L.marker([0, 0]).addTo(mymap);
       const attribution =
         '&copy; <a href="https://www.openstreetmap.org/copyright">osm</a> contributors';
       const tileUrl = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png';
@@ -46,6 +47,9 @@
         const response = await fetch(api_url);
         const data = await response.json();
         const { latitude, longitude } = data;
+        // adding marker
+        // const marker = L.marker([latitude, longitude]).addTo(mymap);
+        marker.setLatLng([latitude, longitude]);
         // console.log(latitude, longitude);
         // mainpulate data to the html
         document.querySelector('.lat').textContent = latitude;
