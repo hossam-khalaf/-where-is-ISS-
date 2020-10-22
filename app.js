@@ -40,6 +40,7 @@ async function getISS() {
   // change style upon the time
   if (visibility == 'daylight') {
     document.body.style.backgroundColor = '#222';
+    document.body.style.color = '#eee';
   } else {
     document.body.style.backgroundColor = '#333';
     document.body.style.color = '#eee';
